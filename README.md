@@ -1,2 +1,2 @@
 # Leetcode-Problems
-Doing DSA with JavaScript(😭)
+Solving Leetcode with JavaScript
