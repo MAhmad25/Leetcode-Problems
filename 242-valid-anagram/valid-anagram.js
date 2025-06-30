@@ -1,5 +1,9 @@
 const isAnagram = function (s, t) {
-
+    /*Solution1
+       if (s.length !== t.length) return false;
+       return s.split("").sort().join("") === t.split("").sort().join("");
+       */
+    // Solution2
     if (s.length !== t.length) return false;
     const sObject = {};
     const tObject = {};
