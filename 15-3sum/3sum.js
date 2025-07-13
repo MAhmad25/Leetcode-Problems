@@ -3,7 +3,6 @@ const threeSum = function (nums) {
     const result = [];
 
     for (let i = 0; i < nums.length - 2; i++) {
-        // skip duplicate anchors
         if (i > 0 && nums[i] === nums[i - 1]) continue;
 
         let low = i + 1;
@@ -17,12 +16,11 @@ const threeSum = function (nums) {
             } else if (sum < 0) {
                 low++;
             } else {
-                // found one!
+
                 result.push([nums[i], nums[low], nums[high]]);
                 low++;
                 high--;
 
-                // now skip duplicates for low & high **inside** the sum===0 branch
                 while (low < high && nums[low] === nums[low - 1]) {
                     low++;
                 }
