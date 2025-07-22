@@ -8,8 +8,8 @@ function reverseVowels(s: string): string {
             [ch[low], ch[high]] = [ch[high], ch[low]];
             low++, high--;
         }
-        if (!vowels.includes(ch[low])) low++;
-        if (!vowels.includes(ch[high])) high--;
+       else if (!vowels.includes(ch[low])) low++;
+       else if (!vowels.includes(ch[high])) high--;
     }
     return ch.join("");
 };
