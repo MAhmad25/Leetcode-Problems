@@ -6,5 +6,4 @@ function twoSum(nums: number[], target: number): number[] {
             return [obj[target - n], i];
         } else obj[n] = i;
     }
-
 };
