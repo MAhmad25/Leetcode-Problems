@@ -1,2 +1,2 @@
 # Leetcode-Problems
-Solving Leetcode with JavaScript
+Solving Leetcode with TypeScript, Python
