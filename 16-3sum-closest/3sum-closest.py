@@ -14,7 +14,7 @@ class Solution:
                     return threeSum
                 if abs(threeSum-target) < abs(closetSum-target):
                     closetSum=threeSum  
-                elif threeSum < target:
+                if threeSum < target:
                     low += 1
                 else:
                     high -= 1
