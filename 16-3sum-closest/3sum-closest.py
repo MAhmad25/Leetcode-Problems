@@ -12,7 +12,6 @@ class Solution:
                 threeSum = nums[index] + nums[low]+nums[high]
                 if threeSum == target:
                     return threeSum
-                diff = abs(threeSum-target)
                 if abs(threeSum-target) < abs(closetSum-target):
                     closetSum=threeSum  
                 elif threeSum < target:
