@@ -2,7 +2,7 @@ class Solution:
     def totalFruit(self, fruits: List[int]) -> int:
         n=len(fruits)
         low=0
-        max_len=1
+        max_len=-1
         freq={}
         for high in range(n):
             freq[fruits[high]]=freq.get(fruits[high],0)+1
