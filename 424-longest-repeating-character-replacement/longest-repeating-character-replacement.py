@@ -1,26 +1,30 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        freq = [0] * 256
-        left = 0
-        res = 0
+      def find_max(freq):
+        return max(freq.values()) if freq else 0
 
-        def find_max(arr):
-            return max(arr)
+      freq = {}
+      low = 0
+      res = 0
 
-        for right in range(len(s)):
-            freq[ord(s[right])] += 1
+      for high in range(len(s)):
+            ch = s[high]
+            freq[ch] = freq.get(ch, 0) + 1
 
-            maxcnt = find_max(freq)
-            length = right - left + 1
-            diff = length - maxcnt
+            ch_most_repeated = find_max(freq)
+            length = high - low + 1
+            character_to_replace = length - ch_most_repeated
 
-            while diff > k:
-                freq[ord(s[left])] -= 1
-                left += 1
-                maxcnt = find_max(freq)
-                length = right - left + 1
-                diff = length - maxcnt
+            while character_to_replace > k:
+                left_ch = s[low]
+                freq[left_ch] -= 1
+                if freq[left_ch] == 0:
+                    del freq[left_ch]
+                low += 1
 
-            res = max(res, right - left + 1)
+                ch_most_repeated = find_max(freq)
+                length = high - low + 1
+                character_to_replace = length - ch_most_repeated
 
-        return res
+            res = max(res, high - low + 1)
+      return res
